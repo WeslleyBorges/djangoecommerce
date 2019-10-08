@@ -7,7 +7,7 @@
 *.pot
 *.pyc
 __pycache__/
-local_settings.py
+djangoecommerce/local_settings.py
 db.sqlite3
 db.sqlite3-journal
 media
@@ -256,3 +256,4 @@ fabric.properties
 
 # End of https://www.gitignore.io/api/python,django,pycharm
 
+local_settings.py
