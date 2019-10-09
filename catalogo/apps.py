@@ -2,7 +2,7 @@ from django.apps import AppConfig
 
 
 class CatalogConfig(AppConfig):
-    name = 'catalogo'
+    name = 'catálogo'
     verbose_name = 'Catálogo'
 
 

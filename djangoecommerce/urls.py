@@ -16,8 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from core import urls as core_urls
+from catalogo import urls as catalogo_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include(core_urls))
+    path('', include(core_urls)),
+    path('catalogo/', include(catalogo_urls))
 ]
