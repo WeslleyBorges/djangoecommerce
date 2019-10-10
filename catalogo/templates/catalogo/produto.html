@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Produto | {{block.super}}
+{% endblock %}
+
+{% block container %}
+<div class="page-header">
+		  <h1>{{produto}}</h1>
+		</div>
+		<div class="row">
+		  <div class="col-sm-4">
+			  <a href="{{ produto.get_absolute_url }}" class="thumbnail">
+				  <img src="http://placehold.it/350x250" alt="" />
+			  </a>
+		  </div>
+		  <div class="col-sm-8">
+			  <dl>
+			  	<dt>{{produto}}</dt>
+				<dd>{{produto.descricao}}</dd>
+              </dl>
+		  </div>
+		</div>
+{% endblock %}
