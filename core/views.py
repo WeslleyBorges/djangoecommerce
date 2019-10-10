@@ -1,7 +1,7 @@
 # coding=utf-8
 
 from django.shortcuts import render
-from catalogo.models import Produto, Categoria
+from .forms import ContatoForm
 
 
 def index(request):
@@ -17,5 +17,8 @@ def index(request):
 
 
 def contato(request):
-    return render(request, 'contato.html')
-
+    contato_form = ContatoForm()
+    context = {
+        'contato_form': contato_form
+    }
+    return render(request, 'contato.html', context)
