@@ -3,20 +3,11 @@ from .models import Produto, Categoria
 from django.views.generic import ListView, DetailView, View
 
 
-# def produtos_categoria(request, slug):
-#     categoria = Categoria.objects.get(slug=slug)
-#     produtos_queryset = Produto.objects.filter(categoria=categoria)
-#     context = {
-#         'produtos': produtos_queryset,
-#         'categoria': categoria
-#     }
-#     return render(request, 'catalogo/produtos_categoria.html', context)
-
-
 class ProdutosCategoriaList(ListView):
     template_name = 'catalogo/produtos_categoria.html'
     model = Produto
     context_object_name = 'produtos'
+    paginate_by = 1
 
     def get_queryset(self):
         categoria = get_object_or_404(Categoria, slug=self.kwargs['slug'])
