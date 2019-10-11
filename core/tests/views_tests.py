@@ -17,3 +17,15 @@ class IndexViewTestCase(TestCase):
     def tearDown(self):
         pass
 
+
+class ContatoViewTestCase(TestCase):
+    def setUpClass(self):
+        self.client = Client()
+        self.url = reverse('contato')
+
+    def test_form(self):
+        data = {'nome': '', 'email': '', 'mensagem': ''}
+        response = self.client.post(self.url, data)
+        self.assertFormError(response, 'contato_form', 'nome', 'Este campo é obrigatório.')
+        self.assertFormError(response, 'contato_form', 'email', 'Este campo é obrigatório.')
+        self.assertFormError(response, 'contato_form', 'mensagem', 'Este campo é obrigatório.')

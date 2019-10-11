@@ -12,7 +12,7 @@
 		<div class="row">
 			<div class="col-sm-6 col-md-4">
 				<div class="thumbnail">
-					<a href="{% url 'produto' produto.slug %}">
+					<a href="{{ produto.get_absolute_url }}">
 						<img src="http://placehold.it/350x250" alt="" />
 					</a>
 					<div class="caption">
